@@ -1,4 +1,5 @@
 import { Navbar, Nav, Container, Form } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const MyNav = ({ searchQuery, setSearchQuery }) => {
   return (
@@ -9,13 +10,21 @@ const MyNav = ({ searchQuery, setSearchQuery }) => {
       data-bs-theme="dark"
     >
       <Container fluid>
-        <Navbar.Brand href="#">EpiBooks</Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand>EpiBooks</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">About</Nav.Link>
-            <Nav.Link href="#">Browse</Nav.Link>
+            <Link to="/">
+              <div className="nav-link">Home</div>
+            </Link>
+            <Link to="/about">
+              <div className="nav-link">About</div>
+            </Link>
+            <Link to="/browse">
+              <div className="nav-link">Browse</div>
+            </Link>
           </Nav>
           <Nav className="ms-auto">
             <Form.Group>
